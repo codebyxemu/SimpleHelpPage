@@ -1,0 +1,5 @@
+name: UltimateHelpPage
+version: ${project.version}
+main: me.xemu.ultimatehelppage.UltimateHelpPage
+api-version: 1.16
+authors: [Xemu]
