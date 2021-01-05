@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.xemu</groupId>
-    <artifactId>UltimateHelpPage</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>SimpleHelpPage</artifactId>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
-    <name>UltimateHelpPage</name>
+    <name>SimpleHelpPage</name>
 
     <properties>
         <java.version>1.8</java.version>

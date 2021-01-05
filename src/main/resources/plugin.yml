@@ -3,3 +3,8 @@ version: ${project.version}
 main: me.xemu.ultimatehelppage.UltimateHelpPage
 api-version: 1.16
 authors: [Xemu]
+
+commands:
+  help:
+    usage: /<command>
+    description: Shows the help page.

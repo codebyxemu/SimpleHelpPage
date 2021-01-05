@@ -33,14 +33,23 @@ public final class SimpleHelpPage extends JavaPlugin implements CommandExecutor,
 
     protected void sendHelp(Player player)
     {
-        for (final String str : cfg.getStringList("HelpPage"))
+        getServer().getScheduler().runTaskAsynchronously(this, () ->
         {
-            player.sendMessage(translate(str));
-        };
+
+            for (String string : getConfig().getStringList("HelpPage"))
+            {
+                player.sendMessage(translate(string));
+                break;
+            };
+
+        });
     };
 
     @Override public void onEnable()
     {
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+
         print("Loading Event (AsyncPlayerChatEvent)");
         print("Loaded Event (AsyncPlayerChatEvent)");
 
@@ -88,6 +97,7 @@ public final class SimpleHelpPage extends JavaPlugin implements CommandExecutor,
     {
         if(event.getMessage().contains(":help") && event.getMessage().startsWith("/bukkit") && event.getMessage().startsWith("/minecraft"))
         {
+            event.setCancelled(true);
             sendHelp(event.getPlayer());
         };
     };
