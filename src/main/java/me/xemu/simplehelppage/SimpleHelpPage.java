@@ -65,7 +65,7 @@ public final class SimpleHelpPage extends JavaPlugin implements CommandExecutor,
 
         try
         {
-            getCommand("help").setExecutor(this);
+            Bukkit.getPluginManager().registerEvents(this, this);
         } catch (final NullPointerException exception) {
             print("[NullPointerException] Failed to register event AsyncPlayerChatEvent.");
         };
